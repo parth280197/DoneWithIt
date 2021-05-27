@@ -1,11 +1,14 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { Image, ImageBackground, Platform, StyleSheet, Text, View } from 'react-native';
 import AppButton from '../components/buttons/AppButton.js';
 import colors from '../utils/colors.js';
 
 function WelcomeScreen(props) {
+
+    const blurRadius = Platform.OS === 'android' ? 2 : 10;
+
     return (
-        <ImageBackground style={styles.background} source={require("../assets/background.jpg")}>
+        <ImageBackground style={styles.background} blurRadius={blurRadius} source={require("../assets/background.jpg")}>
             <View style={styles.logoContainer}>
                 <Image resizeMode='contain' style={styles.logo} source={require('../assets/logo-red.png')}></Image>
                 <Text style={styles.tagLine}>Sell what you don't need</Text>
