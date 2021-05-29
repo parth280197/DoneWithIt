@@ -10,11 +10,11 @@ import colors from './app/utils/colors';
 export default function App() {
   return (
       <>
-        <View>
+        {/* <View>
           <ItemDetailsScreen title={'Jacket for sell!'} subTitle={'$100'} image={require('./app/assets/jacket.jpg')} />
-        </View>
+        </View> */}
         {/* <WelcomeScreen /> */}
-        {/* <ViewImageScreen /> */}
+        <ViewImageScreen />
       </>
     );
 };

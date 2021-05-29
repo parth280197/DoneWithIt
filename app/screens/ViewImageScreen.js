@@ -1,12 +1,14 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import colors from '../utils/colors';
+import { Entypo } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 function ViewImageScreen(props) {
     return (
         <View style={styles.imageContainer}>
-            <View style={styles.closeIcon}></View>
-            <View style={styles.deleteIcon}></View>
+            <Entypo style={styles.closeIcon} name="cross" size={48} color="black" />
+            <MaterialCommunityIcons style={styles.deleteIcon} name="delete" size={48} color="black" />
             <Image resizeMode='contain' style={styles.image} source={require('../assets/chair.jpg')}></Image>
         </View>
     );
@@ -18,7 +20,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.dark
     },
     closeIcon: {
-        backgroundColor: colors.primary,
+        color: colors.gray,
         width: 50,
         height: 50,
         top: 36,
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
         position: 'absolute'
     },
     deleteIcon: {
-        backgroundColor: colors.secondary,
+        color: colors.mediumRed,
         width: 50,
         height: 50,
         top: 36,
