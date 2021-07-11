@@ -8,20 +8,15 @@ import ViewImageScreen from './app/screens/ViewImageScreen';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import colors from './app/utils/colors';
 import Screen from './app/components/screens/Screen';
+import ListItem from './app/components/item/ListItem';
 
 export default function App() {
+
+  const emailIcon = <Icon name={"email"} backgroundColor={colors.primary} />
+
   return (
       <Screen>
-        <Icon name="format-list-bulleted"></Icon>
+        <ListItem title="Parth" subTitle="Patel" ImageComponent={emailIcon} />
       </Screen>
     );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.background,
-    padding: 20,
-    paddingTop: 100,
-  }
-})

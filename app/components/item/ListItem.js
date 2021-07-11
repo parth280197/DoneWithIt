@@ -1,15 +1,16 @@
 import React from 'react';
-import { Image, View, StyleSheet } from 'react-native';
+import { Image, View, StyleSheet, ImageBackground } from 'react-native';
 import colors from '../../utils/colors';
 import AppText from '../texts/AppText';
 
-function ListItem({image,title,subTitle}) {
+function ListItem({image,title,subTitle,ImageComponent}) {
     return (
         <View style={styles.container}>
-            <Image style={styles.image} source={image} />
+            {ImageComponent}
+            {image && <Image style={styles.image} source={image} />}
             <View style={styles.textContainer}>
                 <AppText style={styles.titleText}>{title}</AppText>
-                <AppText style={styles.subTitleText}>{subTitle}</AppText>
+                {subTitle && <AppText style={styles.subTitleText}>{subTitle}</AppText>}
             </View>
         </View>
     );
@@ -18,7 +19,8 @@ function ListItem({image,title,subTitle}) {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        margin: 8
+        margin: 8,
+        alignItems: 'center'
     },
     image: {
         width: 70,
