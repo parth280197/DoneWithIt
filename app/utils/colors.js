@@ -5,5 +5,6 @@ export default {
     white: '#fff',
     background: '#f8f4f4',
     gray: '#808080',
-    mediumRed: '#ff2d29'
+    mediumRed: '#ff2d29',
+    light: "#f8f4f4",
 }
