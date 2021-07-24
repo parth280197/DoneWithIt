@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Screen from "./app/components/screens/Screen";
+import RegistrationScreen from "./app/screens/RegistrationScreen";
 import AppPicker from "./app/components/picker/AppPicker";
 import AppTextInput from "./app/components/inputs/AppTextInput";
 import LoginScreen from "./app/screens/LoginScreen";
@@ -18,7 +19,7 @@ export default function App() {
 
   return (
     <Screen>
-      <LoginScreen />
+      <RegistrationScreen />
     </Screen>
   );
 }
