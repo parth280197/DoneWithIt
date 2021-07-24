@@ -17,6 +17,9 @@ import PickerItem from "./PickerItem";
 function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem }) {
     const [modalVisible, setModalVisible] = useState(false);
 
+    const styledSelectedItem = selectedItem ? (<AppText style={styles.textSelected}> {selectedItem.label} </AppText>) :
+        (<AppText style={styles.text}>{placeholder}</AppText>);
+
     return (
         <>
             <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
@@ -29,9 +32,9 @@ function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem }) {
                             style={styles.icon}
                         />
                     )}
-                    <AppText style={styles.text}>
-                        {selectedItem ? selectedItem.label : placeholder}
-                    </AppText>
+
+                    {styledSelectedItem}
+
                     <MaterialCommunityIcons
                         name="chevron-down"
                         size={20}
@@ -76,6 +79,10 @@ const styles = StyleSheet.create({
     },
     text: {
         flex: 1,
+    },
+    textSelected: {
+        flex: 1,
+        color: defaultStyles.colors.medium
     },
 });
 
