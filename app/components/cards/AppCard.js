@@ -1,10 +1,9 @@
 import React from 'react';
 import { Image, View, StyleSheet } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import colors from '../../utils/colors';
 import AppText from '../texts/AppText';
 
-function AppCard({title,subTitle,image}) {
+function AppCard({ title, subTitle, image }) {
     return (
         <View style={styles.cardContainer}>
             <Image style={styles.image} source={image}></Image>
