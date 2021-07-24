@@ -4,8 +4,7 @@ import * as Yup from 'yup';
 
 import { Image, StyleSheet, View } from 'react-native';
 import AppButton from '../components/buttons/AppButton';
-import AppTextInput from '../components/inputs/AppTextInput';
-import ErrorMessage from '../components/forms/ErrorMessage';
+import AppFormField from '../components/forms/AppFormField';
 
 const validationSchema = Yup.object().shape({
     email: Yup.string().required().email().label("Email"),
@@ -24,10 +23,10 @@ function LoginScreen(props) {
                 validationSchema={validationSchema}
             >
                 {
-                    ({ handleChange, handleSubmit, errors }) => (
+                    ({ handleSubmit }) => (
                         <>
-                            <AppTextInput
-                                onChangeText={handleChange("email")}
+                            <AppFormField
+                                name="email"
                                 autoCapitalize="none"
                                 autoCorrect={false}
                                 icon="email"
@@ -35,9 +34,8 @@ function LoginScreen(props) {
                                 keyboardType="email-address"
                                 textContentType="emailAddress"
                             />
-                            <ErrorMessage error={errors.email} />
-                            <AppTextInput
-                                onChangeText={handleChange("password")}
+                            <AppFormField
+                                name="password"
                                 autoCapitalize="none"
                                 autoCorrect={false}
                                 icon="lock"
@@ -45,7 +43,6 @@ function LoginScreen(props) {
                                 secureTextEntry
                                 textContentType="password"
                             />
-                            <ErrorMessage error={errors.password} />
                             <AppButton
                                 title="login"
                                 onPress={handleSubmit}
