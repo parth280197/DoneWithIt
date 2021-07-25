@@ -14,7 +14,7 @@ import Screen from "./../screens/Screen";
 import defaultStyles from "../../utils/styles";
 import PickerItem from "./PickerItem";
 
-function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem, width = "100%" }) {
+function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem, width = "100%", CustomPickerItem = PickerItem, numberOfColumns = 1 }) {
     const [modalVisible, setModalVisible] = useState(false);
 
     const styledSelectedItem = selectedItem ?
@@ -47,9 +47,10 @@ function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem, width
                     <FlatList
                         data={items}
                         keyExtractor={(item) => item.value.toString()}
+                        numColumns={numberOfColumns}
                         renderItem={({ item }) => (
-                            <PickerItem
-                                label={item.label}
+                            <CustomPickerItem
+                                item={item}
                                 onPress={() => {
                                     setModalVisible(false);
                                     onSelectItem(item);
