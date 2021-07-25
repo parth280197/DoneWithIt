@@ -27,8 +27,8 @@ function ListItem({
                         {IconComponent}
                         {image && <Image style={styles.image} source={image} />}
                         <View style={styles.detailsContainer}>
-                            <AppText style={styles.title}>{title}</AppText>
-                            {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
+                            <AppText style={styles.title} numberOfLines={1}>{title}</AppText>
+                            {subTitle && <AppText style={styles.subTitle} numberOfLines={2}>{subTitle}</AppText>}
                         </View>
                     </View>
                     <MaterialCommunityIcons
@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
         padding: 15,
+        paddingRight: 32,
         backgroundColor: colors.white,
         justifyContent: "space-between",
         alignItems: "center"
@@ -55,6 +56,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
     detailsContainer: {
+        flex: 1,
         marginLeft: 10,
         justifyContent: "center",
     },

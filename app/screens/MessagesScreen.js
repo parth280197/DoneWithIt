@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 
 import Screen from "../components/screens/Screen";
 import {
@@ -12,7 +12,7 @@ const initialMessages = [
     {
         id: 1,
         title: "Parth",
-        description: "Patel",
+        description: "Patel  d jhsdjashjkhdskj hdkjas hdkjhsajkd hsahljdahsjk hjjkhfjahdkhfdahsjhgjhj afdkjfdajshf jhdkahfjhdkjshfhdsajhgjkhfdal;dkfuhahgufs dohdsh;j;aldwjfhjsdh ghjdshfdjkhafhhj",
         image: require("../assets/parth.jpg"),
     },
     {
@@ -28,7 +28,6 @@ function MessagesScreen(props) {
     const [refreshing, setRefreshing] = useState(false);
 
     const handleDelete = (message) => {
-        // Delete the message from messages
         setMessages(messages.filter((m) => m.id !== message.id));
     };
 
