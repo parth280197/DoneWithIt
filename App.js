@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import ImageInput from "./app/components/inputs/ImageInput";
+import { ImageInputList } from "./app/components/lists";
 
 export default function App() {
 
@@ -17,17 +18,9 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
-      {imageUris.map((uri) => (
-        <View key={uri} >
-          <ImageInput
-            imageUri={uri}
-            onChangeImage={() => handleRemove(uri)}
-          />
-        </View>
-      ))}
-      <ImageInput onChangeImage={(uri) => handleAdd(uri)} />
-    </View>
+    <>
+      <ImageInputList />
+    </>
   );
 }
 
