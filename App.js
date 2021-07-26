@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import ImageInput from "./app/components/inputs/ImageInput";
 import { ImageInputList } from "./app/components/lists";
+import ListingEditScreen from "./app/screens/ListingEditingScreen";
 
 export default function App() {
 
@@ -19,7 +20,7 @@ export default function App() {
 
   return (
     <>
-      <ImageInputList />
+      <ListingEditScreen />
     </>
   );
 }
