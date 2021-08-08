@@ -11,7 +11,7 @@ function ItemDetailsScreen({route}) {
 
     return (
         <View>
-            <Image style={styles.image} source={item.image}></Image>
+            <Image style={styles.image} source={{uri:item.images[0].url}}></Image>
             <View style={styles.textContainer}>
                 <AppText style={styles.titleText}>{item.title}</AppText>
                 <AppText style={styles.subTitleText}>{item.price}</AppText>
