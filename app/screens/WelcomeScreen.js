@@ -3,7 +3,9 @@ import { Image, ImageBackground, Platform, StyleSheet, Text, View } from 'react-
 import AppButton from '../components/buttons/AppButton.js';
 import colors from '../utils/colors.js';
 
-function WelcomeScreen(props) {
+import routes from '../navigation/routes.js';
+
+function WelcomeScreen({navigation}) {
 
     const blurRadius = Platform.OS === 'android' ? 2 : 10;
 
@@ -14,8 +16,8 @@ function WelcomeScreen(props) {
                 <Text style={styles.tagLine}>Sell what you don't need</Text>
             </View>
             <View style={styles.buttonContainer}>
-                <AppButton title="Login" onPress={()=>{console.log("Login")}}/>
-                <AppButton title="Register" color='secondary' onPress={()=>{console.log("Register")}}/>
+                <AppButton title="Login" onPress={() => navigation.navigate(routes.LOGIN)}/>
+                <AppButton title="Register" color='secondary' onPress={() => navigation.navigate(routes.REGISTER)}/>
             </View>
         </ImageBackground>
     );

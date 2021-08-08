@@ -1,27 +1,14 @@
 import React, { useState } from "react";
-import { View, StyleSheet } from "react-native";
-import ImageInput from "./app/components/inputs/ImageInput";
-import { ImageInputList } from "./app/components/lists";
-import ListingEditScreen from "./app/screens/ListingEditingScreen";
+import { StyleSheet } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import navigationTheme from "./app/navigation/navigationTheme";
+import AppNavigator from "./app/navigation/AppNavigator";
 
 export default function App() {
-
-  const [imageUris, setFieldValue] = useState([]);
-
-  const handleAdd = (uri) => {
-    setFieldValue([...imageUris, uri]);
-  };
-
-  const handleRemove = (uri) => {
-    setFieldValue(
-      imageUris.filter((imageUri) => imageUri !== uri)
-    );
-  };
-
   return (
-    <>
-      <ListingEditScreen />
-    </>
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
+    </NavigationContainer>
   );
 }
 

@@ -1,42 +1,53 @@
-import React from 'react';
-import { Image, View, StyleSheet } from 'react-native';
-import colors from '../../utils/colors';
-import AppText from '../texts/AppText';
+import React from "react";
+import {
+  View,
+  StyleSheet,
+  Image,
+  TouchableWithoutFeedback,
+} from "react-native";
 
-function AppCard({ title, subTitle, image }) {
-    return (
-        <View style={styles.cardContainer}>
-            <Image style={styles.image} source={image}></Image>
-            <View style={styles.textContainer}>
-                <AppText style={styles.titleText}>{title}</AppText>
-                <AppText style={styles.subTitleText}>{subTitle}</AppText>
-            </View>
+import AppText from "../texts/AppText";
+import colors from "../../utils/colors";
+
+function AppCard({ title, subTitle, image, onPress }) {
+  return (
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={styles.card}>
+        <Image style={styles.image} source={image} />
+        <View style={styles.detailsContainer}>
+          <AppText style={styles.title} numberOfLines={1}>
+            {title}
+          </AppText>
+          <AppText style={styles.subTitle} numberOfLines={2}>
+            {subTitle}
+          </AppText>
         </View>
-    );
+      </View>
+    </TouchableWithoutFeedback>
+  );
 }
 
-export default AppCard;
-
 const styles = StyleSheet.create({
-    cardContainer: {
-        backgroundColor: colors.white,
-        borderRadius: 12,
-        width: '100%',
-        overflow: 'hidden',
-        marginBottom: 8,
-    },
-    image: {
-        width: '100%',
-        height: 200,
-    },
-    textContainer: {
-        padding: 12,
-    },
-    titleText: {
-        marginBottom: 4,
-    },
-    subTitleText: {
-        color: colors.secondary,
-        fontWeight: 'bold'
-    }
-})
+  card: {
+    borderRadius: 15,
+    backgroundColor: colors.white,
+    marginBottom: 20,
+    overflow: "hidden",
+  },
+  detailsContainer: {
+    padding: 20,
+  },
+  image: {
+    width: "100%",
+    height: 200,
+  },
+  subTitle: {
+    color: colors.secondary,
+    fontWeight: "bold",
+  },
+  title: {
+    marginBottom: 7,
+  },
+});
+
+export default AppCard;
